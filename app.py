@@ -9,7 +9,7 @@ from dash.exceptions import PreventUpdate
 
 from dash.dependencies import Input, Output
 
-app = dash.Dash(assets_folder=None)
+app = dash.Dash()
 colors = {
     'text':'#000000'
     }
@@ -389,8 +389,6 @@ def set_city_options(state_value):
                 option.extend(city_list[var])
     return [{"label": m, "value": m}  for m in option]
 
-def open_web():
-    webbrowser.open_new('http://127.0.0.1:8050/ ')
 
 def main ():
     print('Starting the main function...')
@@ -399,7 +397,7 @@ def main ():
     
     global app
     app.layout = create_app_ui()
-    open_web()
+    open_broweser()
     app.title = "Terrorism Analysis With Insights"
     app.run_server()
     
